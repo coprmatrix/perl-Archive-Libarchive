@@ -1,0 +1,3 @@
+setBadness("no-changelogname-tag",0)
+setBadness("devel-file-in-non-devel-package",0)
+setBadness("file-contains-buildroot",0)
