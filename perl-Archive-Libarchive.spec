@@ -24,9 +24,8 @@ Summary:        Modern Perl bindings to libarchive
 Url:            https://metacpan.org/release/%{cpan_name}
 Source0:         https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/%{cpan_name}-%{version}.tar.gz
 BuildArch:      noarch
-BuildRequires:  perl
-BuildRequires:  perl-macros
-BuildRequires:  (rpm-build-perl or perl-generators)
+BuildRequires:  perl-macros-suse
+BuildRequires:  perl-generators
 BuildRequires:  perl(FFI::C::File)
 BuildRequires:  perl(FFI::CheckLib) >= 0.30
 BuildRequires:  perl(FFI::C::Stat)
