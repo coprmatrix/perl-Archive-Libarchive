@@ -1,7 +1,7 @@
 #
-# spec file for package perl-Archive-Libarchive (Version 0.08)
+# spec file for package perl-Archive-Libarchive (Version 0.09)
 #
-# Copyright (c) 124 SUSE LLC
+# Copyright (c) 125 SUSE LLC
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -17,7 +17,7 @@
 
 %define cpan_name Archive-Libarchive
 Name:           perl-Archive-Libarchive
-Version:        0.08
+Version:        0.09
 Release:        0
 License:   Artistic-1.0 or GPL-1.0-or-later
 Summary:        Modern Perl bindings to libarchive
@@ -49,7 +49,7 @@ Requires:       perl(FFI::Platypus::Type::Enum) >= 0.05
 Requires:       perl(FFI::Platypus::Type::PtrObject)
 Requires:       perl(Ref::Util)
 Requires:       libarchive-devel
-
+%{?perl_requires}
 
 %description
 This module provides a Perl object-oriented interface to the 'libarchive'
@@ -145,7 +145,7 @@ older version, then you can force a 'share' install of Alien::Libarchive3:
  env ALIEN_INSTALL_TYPE=share cpanm Alien::Libarchive3
 
 %prep
-%autosetup  -n %{cpan_name}-%{version}
+%autosetup  -n %{cpan_name}-%{version} -p1
 
 find . -type f ! -path "*/t/*" ! -name "*.pl" ! -path "*/bin/*" ! -path "*/script/*" ! -path "*/scripts/*" ! -name "configure" -print0 | xargs -0 chmod 644
 
@@ -154,6 +154,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %make_build
 
 %check
+make test
 
 %install
 %perl_make_install
