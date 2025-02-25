@@ -2,5 +2,7 @@
   <service name="cpanspec" mode="manual">
     <param name="source">Archive::Libarchive</param>
     <param name="add-requires">libarchive-devel</param>
+    <param name="add-buildrequires">perl-core</param>
+    <param name="add-buildrequires">make</param>
   </service>
 </services>
