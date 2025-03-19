@@ -6,7 +6,7 @@
     <param name="add-buildrequires">make</param>
   </service>
   <service name="perl_regex" mode="manual">
-    <param name="regex">s~make test~%ifnarch s390x\nmake test\n%endif~</param>
+    <param name="regex">s~make test~~;</param>
     <param name="file">perl-Archive-Libarchive.spec</param>
   </service>
 </services>
